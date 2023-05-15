@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- {% load static %} -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title> Sitio Web De Kodak </title>
+</head>
+<body id="inicio" style="display: grid; place-items: center;">
+    <!-- Navegacion -->
+    <nav id="navegacion">
+        <h1> KODAK </h1>
+    </nav>
+    <div>
+        <h1 style="color: white; margin: 1vw; font-size: 45px; text-shadow: 2px 2px 3px #000;"> Bienvenid@ {{usuario}}</h1>
+    </div>
+    <section class="cuadro" style="display: grid; grid-template-columns: 33% 33% 33%;">
+        <div class="boton">
+            <a href="{% url 'Foda' %}"> <button class="boton-eleccion"> FODA </button> </a>
+        </div>
+        <div class="boton">
+            <a href="{% url 'Area' %}"> <button class="boton-eleccion"> Area de ayuda </button> </a>
+        </div>
+        <div class="boton">
+            <a href="{% url 'FodaPersonal' %}"> <button class="boton-eleccion"> Aportar al foda </button> </a>
+        </div>
+        <div class="boton">
+            <a href="{% url 'VerFoda' %}"> <button class="boton-eleccion"> Ver aportaciones </button> </a>
+        </div>
+    </section>
+    <!-- Pie -->
+    <footer>
+        <p> derechos de autor de 1888 - 2023 @ </p>
+        <p> "You Press the Button, We Do the Rest" </p>
+    </footer>
+</body>
+</html>

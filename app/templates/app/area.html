@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- {% load static %} -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title> Sitio Web De Kodak </title>
+</head>
+<body id="inicio">
+    <nav id="navegacion">
+        <h1> KODAK </h1>
+    </nav>
+    <section id="section_form">
+        <div class="contenedor__form" style="border: 5px solid #f81404">
+            <form action="" id="form__test" method="POST"> {% csrf_token %}
+                <h1 style="font-size: 40px; text-shadow: 1px 1px 2px #f81404;"> Ingrese sus datos </h1>
+                <input class='cuadro_texto' type="text" placeholder="Nombre" name="usuario">
+                <input class='cuadro_texto' type="text" placeholder="Apellido" name="contrasenia">
+                <select class="cuadro_texto" name="rol">
+                    <option>Rol...</option>
+                    <option>Administracion</option>
+                    <option>Jefe de Departamento</option>
+                    <option>Marketing</option>
+                    <option>Indutrial</option>
+                    <option>Equipo de Desarrollo</option>
+                </select>
+                <br>
+                <h1 style="font-size: 40px; text-shadow: 1px 1px 2px #f81404;"> Seleccione los items que mas le agradaron </h1>
+                <input class='cuadro_texto' type="checkbox"> 5ta disiplina <br>
+                <input class='cuadro_texto' type="checkbox"> Valle de la tristeza <br>
+                <input class='cuadro_texto' type="checkbox"> Negociacion <br>
+                
+                <h1 style="font-size: 40px; text-shadow: 1px 1px 2px #f81404;"> Que le parecieron las charlas? </h1>
+                <input class='cuadro_texto' type="radio" name="charla"> Me gustaron <br>
+                <input class='cuadro_texto' type="radio" name="charla"> ni Fu ni Fa <br>
+                <input class='cuadro_texto' type="radio" name="charla"> No me gustaron <br>
+                <input class='cuadro_texto' type="text" placeholder="Cuentenos mas" name="op_charla">
+                <br>
+                <h1 style="font-size: 40px; text-shadow: 1px 1px 2px #f81404;"> y las Capacitaciones? </h1>
+                <input class='cuadro_texto' type="radio" name="capacitacion"> Me gustaron <br>
+                <input class='cuadro_texto' type="radio" name="capacitacion"> ni Fu ni Fa <br>
+                <input class='cuadro_texto' type="radio" name="capacitacion"> No me gustaron <br>
+                <input class='cuadro_texto' type="text" placeholder="Cuentenos mas" name="op_capacitacion">
+                <br>
+                <h1 style="font-size: 40px; text-shadow: 1px 1px 2px #f81404;"> Agradecemos su colaboracion </h1>
+                <input class='cuadro_texto' type="text" placeholder="Cuentenos su opinion con los cambios" name="op_cambio">
+                <input class='cuadro_texto' type="text" placeholder="Que aspectos podriamos agregar" name="op_agregar">
+                <input class='cuadro_texto' type="text" placeholder="Que aspectos podriamos remover" name="op_remover">
+                <br>
+                <input class='boton-login' type="submit" value="Enviar">
+            </form>    
+        </div>
+        <div class="contenedor_kodak" style="border: 5px solid black">
+            <p style="text-shadow: 5px 5px 3px #231f20;">K</p>
+            <p style="text-shadow: 5px 5px 3px #231f20;">O</p>
+            <p style="text-shadow: 5px 5px 3px #231f20;">D</p>
+            <p style="text-shadow: 5px 5px 3px #231f20;">A</p>
+            <p style="text-shadow: 5px 5px 3px #231f20;">K</p>
+        </div>
+    </section>
+    <!-- Pie -->
+    <footer>
+        <p> derechos de autor de 1888 - 2023 @ </p>
+        <p> "You Press the Button, We Do the Rest" </p>
+    </footer>
+</body>
+</html>

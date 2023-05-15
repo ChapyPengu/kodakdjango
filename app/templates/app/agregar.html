@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- {% load static %} -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title> Sitio Web De Kodak </title>
+</head>
+<body id="inicio">
+    <nav id="navegacion">
+        <h1> KODAK </h1>
+    </nav>
+    <section id="section_form" style="height: 30vw; margin: 5vw;">
+        <div class="contenedor__form" style="height: 25vw;">
+            <form action="" id="form__test" method="POST"> {% csrf_token %}
+                <h1> Crear Cuenta </h1>
+                <input class='cuadro_texto' type="text" placeholder="Usuario" name="usuario">
+                <input class='cuadro_texto' type="text" placeholder="Contrasenia" name="contrasenia">
+                <select class="cuadro_texto" name="rol">
+                    <option>Rol...</option>
+                    <option>Administracion</option>
+                    <option>Jefe de Departamento</option>
+                    <option>Marketing</option>
+                    <option>Indutrial</option>
+                    <option>Equipo de Desarrollo</option>
+                </select>
+                <input class='boton-login' type="submit" value="Agregar">
+            </form>    
+        </div>
+        <div class="contenedor_kodak" style="height: 25vw;">
+            <p style="font-size: 50px">K</p>
+            <p style="font-size: 50px">O</p>
+            <p style="font-size: 50px">D</p>
+            <p style="font-size: 50px">A</p>
+            <p style="font-size: 50px">K</p>
+        </div>
+    </section>
+    <!-- Pie -->
+    <footer>
+        <p> derechos de autor de 1888 - 2023 @ </p>
+        <p> "You Press the Button, We Do the Rest" </p>
+    </footer>
+</body>
+</html>
