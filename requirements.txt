@@ -36,7 +36,6 @@ jaraco.functools==3.6.0
 jaraco.text==3.11.1
 joblib==1.2.0
 keyutils==0.6
-lensfun==0.3.3
 lxml==4.9.2
 markdown-it-py==2.2.0
 mdurl==0.1.2
