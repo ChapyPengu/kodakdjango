@@ -15,3 +15,9 @@ class FodaPersonal(models.Model):
     oportunidad = models.CharField(max_length=60)
     debilidad = models.CharField(max_length=60)
     amenaza = models.CharField(max_length=60)
+
+class Mensaje(models.Model):
+
+    miembro = models.CharField(max_length=30)
+    mensaje = models.CharField(max_length=240)
+

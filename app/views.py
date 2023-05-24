@@ -29,13 +29,13 @@ def login(request):
         
             if usuario == 'lautaro' and contrasenia == 'osi':
                 usuario_actual[0] = 'lautaro'
-                return render(request, 'app/admin.html', {'usuario' : usuario, 'contrasenia' : contrasenia})
+                return render(request, 'app/admin.html', {'usuarioo' : usuario_actual[0]})
 
             miembros = models.Cuenta.objects.all()
 
             if es_miembro(usuario, contrasenia, miembros):
                 usuario_actual[0] = usuario
-                return render(request, 'app/eleccion.html', {'usuario' : usuario, 'contrasenia' : contrasenia})
+                return render(request, 'app/eleccion.html', {'usuarioo' : usuario_actual[0]})
             
             ver_mensaje = True
 
@@ -57,9 +57,9 @@ def agregar(request):
 
             cuenta.save()
 
-            return render(request, 'app/admin.html', {'usuario' : informacion['usuario'], 'contrasenia' : informacion['contrasenia']})
+            return render(request, 'app/admin.html', {'usuarioo' : usuario_actual[0]})
             
-    return render(request, 'app/agregar.html')
+    return render(request, 'app/agregar.html', {'usuarioo' : usuario_actual[0]})
 
 def foda(request):
     return render(request, 'app/foda.html')
@@ -118,7 +118,7 @@ def fodaPersonal(request):
 
     return render(request, 'app/fodaPersonal.html')
 
-def ver_foda_personal(request):
+def ver_foda(request):
 
 
     fodas = models.FodaPersonal.objects.all()
@@ -131,4 +131,70 @@ def ver_foda_personal(request):
 
             fodas_del_usuario.append(foda)
     
-    return render(request, 'app/verFodaPersonal.html', {'fodas' : fodas_del_usuario})
+    return render(request, 'app/verFoda.html', {'fodas' : fodas_del_usuario})
+
+
+def ver_fodas(request):
+
+    fodas = models.FodaPersonal.objects.all()
+
+    return render(request, 'app/verFodas.html', {'fodas' : fodas})
+
+
+def chat1(request):
+
+    mensajes = models.Mensaje.objects.all()
+
+    if request.method == 'GET':
+
+        return render(request, 'app/chat1.html', {'mensajes' : mensajes})
+
+    elif request.method == 'POST':
+
+        miMensaje = forms.Mensaje(request.POST)
+
+        # print(miMensaje)
+        # t = miMensaje + 'hola'
+        t = miMensaje.__str__()
+        if miMensaje.is_valid:
+
+            contenido = miMensaje.cleaned_data
+
+            mensaje = models.Mensaje(miembro=usuario_actual[0], mensaje=contenido['mensaje'])
+
+
+            mensaje.save()
+
+            # mensaje.clean()
+
+            miMensaje.clean()
+
+
+    request.method = 'GET'
+    
+    return render(request, 'app/chat1.html', {'mensajes' : mensajes})
+
+def chat2(request):
+
+    mensajes = models.Mensaje.objects.all()
+
+    if request.method == 'GET':
+
+        return render(request, 'app/chat2.html', {'mensajes' : mensajes})
+
+    elif request.method == 'POST':
+
+        miMensaje = forms.Mensaje(request.POST)
+
+        print(miMensaje)
+
+        if miMensaje.is_valid:
+
+            contenido = miMensaje.cleaned_data
+            if usuario_actual[0] is None:
+                usuario_actual[0] = 'lautaro'
+            mensaje = models.Mensaje(miembro=usuario_actual[0], mensaje=contenido['mensaje'])
+
+            mensaje.save()
+
+    return render(request, 'app/chat2.html', {'mensajes' : mensajes})

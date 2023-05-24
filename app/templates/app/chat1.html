@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- {% load static %} -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title> Sitio Web De Kodak </title>
+</head>
+<body id="inicio">
+    <nav id="navegacion">
+        <h1> KODAK </h1>
+    </nav>
+    <section id="section_form" style="height: auto; width: 50vw; margin: 5vw;">
+        {% for mensaje in mensajes %}
+            <div class="cuadro_miembro" style=" border-radius: 0; box-shadow: 3px 3px 0 5px #000; width: 100%; height: min-content; margin: 0; padding: 0;">
+                <ul>
+                    <li class="atributo_miembro"> <span style="text-shadow: 2px 2px 2px #f81404; font-size: 20px"> {{mensaje.miembro}}: </span>  <span style="font-size: 15px"> {{mensaje.mensaje}} </span></li>
+                </ul>
+            </div>
+        {% endfor %}
+    </section>
+    <section>
+
+
+        
+        <form action="" method="POST"'> {% csrf_token %}
+            <input class='cuadro_texto' type="text" name="mensaje" style="background: white; color: #000;">
+            <input class="boton-login" type="submit" value="Publicar">
+        </form>
+        <a href="{% url 'Chat2' %}"> <input class="boton-login" type="submit" value="cambiar a 2"> </a>
+
+    </section>
+    <!-- Pie -->
+    <footer>
+        <p> derechos de autor de 1888 - 2023 @ </p>
+        <p> "You Press the Button, We Do the Rest" </p>
+    </footer>
+</body>
+</html>

@@ -18,9 +18,9 @@
         <h1> KODAK </h1>
     </nav>
     <div>
-        <h1 style="color: white; margin: 1vw; font-size: 45px; text-shadow: 2px 2px 2px #000;"> Bienvenido {{usuario}} eres el admin chaval </h1>
+        <h1 style="color: white; margin: 1vw; font-size: 45px; text-shadow: 2px 2px 2px #000;"> Bienvenido {{usuarioo}} eres el admin chaval </h1>
     </div>
-    <section class="cuadro" style="display: grid; grid-template-columns: 25% 25% 25% 25%;">
+    <section class="cuadro" style="display: grid; grid-template-columns: 33% 33% 33%;">
         <div class="boton">
             <a href="{% url 'Foda' %}"> <button class="boton-eleccion"> FODA </button> </a>
         </div>
@@ -32,6 +32,12 @@
         </div>
         <div class='boton'>
             <a href="{% url 'Ver' %}"> <button class="boton-eleccion"> Ver Miembros </button> </a> 
+        </div>
+        <div class='boton'>
+            <a href="{% url 'VerFodas' %}"> <button class="boton-eleccion"> Ver Foda de Miembros </button> </a> 
+        </div>
+        <div class='boton'>
+            <a href="{% url 'Chat1' %}"> <button class="boton-eleccion"> Chats </button> </a>
         </div>
     </section>
     <!-- Pie -->

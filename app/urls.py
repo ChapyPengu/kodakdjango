@@ -10,5 +10,9 @@ urlpatterns = [
     path('admin/', views.admin, name='Admin'),
     path('ver/', views.ver, name='Ver'),
     path('fodaPersonal/', views.fodaPersonal, name='FodaPersonal'),
-    path('verFodaPersonal/', views.ver_foda_personal, name='VerFoda')
+    path('verFodaPersonal/', views.ver_foda, name='VerFoda'),
+    path('verFodaPersonales/', views.ver_fodas, name='VerFodas'),
+    path('chat1/', views.chat1, name='Chat1'),
+    path('chat2/', views.chat2, name='Chat2'),
+
 ]

@@ -17,3 +17,7 @@ class Foda(forms.Form):
     oportunidad = forms.CharField()
     debilidad = forms.CharField()
     amenaza = forms.CharField()
+
+class Mensaje(forms.Form):
+
+    mensaje = forms.CharField()
